@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.coutomariel.cobranca.model.Titulo;
 import com.coutomariel.cobranca.repository.Titulos;
@@ -20,8 +21,10 @@ public class TituloController {
 	}
 	
 	@PostMapping("/titulos")
-	private String salvar(Titulo titulo){
+	private ModelAndView salvar(Titulo titulo){
 		titulos.save(titulo);
-		return "cadastro-titulos";
+		ModelAndView mv = new ModelAndView("cadastro-titulos");
+		mv.addObject("mensagem", "Título salvo com sucesso!");
+		return mv;
 	}
 }

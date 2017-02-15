@@ -21,6 +21,10 @@
 	</nav>
 
 	<form method="POST" class="form-horizontal">
+		<div class="alert alert-success"
+					th:if="${!#strings.isEmpty(mensagem)}">
+					<span th:text="${mensagem}"></span>
+				</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h1 class="panel-title">Novo título</h1>
