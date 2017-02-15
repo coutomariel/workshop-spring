@@ -3,7 +3,7 @@ package com.coutomariel.cobranca.model;
 public enum StatusTitulo {
 
 	PENDENTE("Pendente"),
-	PAGO("Pago");
+	RECEBIDO("Recebido");
 	
 	private String descricao;
 
